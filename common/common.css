@@ -1,0 +1,32 @@
+.v-f,
+.v-fc,
+.v-fjc,
+.v-fjs {
+	display: flex;
+}
+
+.v-fc,
+.v-fjs,
+.v-fjc {
+	align-items: center;
+}
+
+.v-fjs {
+	justify-content: space-between;
+}
+
+.v-fjc {
+	justify-content: center;
+}
+
+.f30 {
+	font-size: 30upx;
+}
+
+.f35 {
+	font-size: 35upx;
+}
+
+.f40 {
+	font-size: 40upx;
+}

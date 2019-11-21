@@ -19,4 +19,6 @@
 	@import url("./common/icon.css");
 	/* 引入第三方动画库 */
 	@import url("./common/animate.css");
+	/* 引入本项目的公共样式 */
+	@import url("./common/common.css");
 </style>

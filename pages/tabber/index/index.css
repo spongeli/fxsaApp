@@ -1,21 +1,6 @@
-.v-f,
-.v-fc,
-.v-fjc {
-	display: flex;
-}
-
-.v-fc,
-.v-fjc {
-	align-items: center;
-}
-
-.v-fjc {
-	justify-content: space-between;
-}
-
 .index-message {
 	padding: 20upx;
-	border: 1px solid #EEEEEE;
+	border-bottom: 1px solid #EEEEEE;
 }
 
 .message-list1>view:first-child>image {
@@ -25,12 +10,51 @@
 	margin-right: 20upx;
 }
 
+.message-list1>view>:last-child {
+	color: #989898;
+}
+
+.index-follow {
+	width: 80upx;
+	padding: 0 10upx;
+	color: #000000;
+	background-color: #F4F4F4;
+	border-radius: 5upx;
+	margin-right: 10upx;
+}
+
 .message-list2 {
 	margin-top: 15upx;
+}
+
+.message-list3{
+	position: relative;
 }
 
 .message-list3 image {
 	width: 100%;
 	margin-top: 15upx;
 	border-radius: 10upx;
+}
+.index-message-center-button{
+	position: absolute;
+	font-size: 130upx;
+	color: white;
+}
+.index-message-center-data{
+	position: absolute;
+	bottom: 8upx;
+	right: 8upx;
+	padding: 0 15upx;
+	font-size: 16upx;
+	background-color: rgba(51, 51, 51, 0.78);
+	color: white;
+	border-radius: 10upx;
+}
+.message-list4 {
+	color: #D5D5D5;
+}
+
+.message-list4>view>view:first-child {
+	margin-right: 15upx;
 }
