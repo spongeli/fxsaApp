@@ -1,0 +1,36 @@
+.v-f,
+.v-fc,
+.v-fjc {
+	display: flex;
+}
+
+.v-fc,
+.v-fjc {
+	align-items: center;
+}
+
+.v-fjc {
+	justify-content: space-between;
+}
+
+.index-message {
+	padding: 20upx;
+	border: 1px solid #EEEEEE;
+}
+
+.message-list1>view:first-child>image {
+	width: 88upx;
+	height: 88upx;
+	border-radius: 100%;
+	margin-right: 20upx;
+}
+
+.message-list2 {
+	margin-top: 15upx;
+}
+
+.message-list3 image {
+	width: 100%;
+	margin-top: 15upx;
+	border-radius: 10upx;
+}

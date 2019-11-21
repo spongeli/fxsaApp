@@ -1,0 +1,92 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabber/index/index",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"searchInput": {
+							"autoFocus": false,
+							"align": "center",
+							"backgroundColor": "#F7F7F7",
+							"borderRadius": "5px",
+							"placeholder": "搜索糗事",
+							"placeholderColor": "#CCCCCC",
+							"disabled": true
+						},
+						"buttons": [{
+								"color": "#FF9619",
+								"colorPressed": "#BBBBBB",
+								"float": "left",
+								"fontSize": "22px",
+								"fontSrc": "/static/font/icon.ttf",
+								"text": "\ue609"
+							},
+							// 右边
+							{
+								"color": "#000000",
+								"colorPressed": "#BBBBBB",
+								"float": "right",
+								"fontSize": "22px",
+								"fontSrc": "/static/font/icon.ttf",
+								"text": "\ue653"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/demo/demo",
+			"style": {
+				"navigationBarTitleText": "demo"
+			}
+		},
+		{
+			"path": "pages/tabber/dynamic/dynamic",
+			"style": {}
+		},
+		{
+			"path": "pages/tabber/chat/chat",
+			"style": {}
+		},
+		{
+			"path": "pages/tabber/home/home",
+			"style": {}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		// "navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "white",
+		"backgroundColor": "#CCCCCC"
+	},
+	"tabBar": {
+		"color": "#CCCCCC",
+		"selectedColor": "#FFDF34",
+		"borderStyle": "black",
+		"backgroundColor": "white",
+		"list": [{
+			"pagePath": "pages/tabber/index/index",
+			"iconPath": "static/tabber/index.png",
+			"selectedIconPath": "static/tabber/indexed.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/tabber/dynamic/dynamic",
+			"iconPath": "static/tabber/dynamic.png",
+			"selectedIconPath": "static/tabber/dynamiced.png",
+			"text": "动态"
+		}, {
+			"pagePath": "pages/tabber/chat/chat",
+			"iconPath": "static/tabber/chat.png",
+			"selectedIconPath": "static/tabber/chated.png",
+			"text": "小纸条"
+		}, {
+			"pagePath": "pages/tabber/home/home",
+			"iconPath": "static/tabber/home.png",
+			"selectedIconPath": "static/tabber/homeed.png",
+			"text": "我的"
+		}]
+	}
+}
