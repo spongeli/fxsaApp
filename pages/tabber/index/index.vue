@@ -41,7 +41,7 @@
 		},
 		data() {
 			return {
-				windowHeight: 715,
+				windowHeight: 0,
 				tabSelectIndex: 0,
 				tabBarScorllSpan: [{
 						loadMore: "下拉加载更多",

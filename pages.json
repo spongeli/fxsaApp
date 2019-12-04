@@ -46,7 +46,9 @@
 		},
 		{
 			"path": "pages/tabber/dynamic/dynamic",
-			"style": {}
+			"style": {
+				"navigationStyle": "custom"
+			}
 		},
 		{
 			"path": "pages/tabber/chat/chat",
@@ -98,7 +100,7 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		// "navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "仿糗事",
 		"navigationBarBackgroundColor": "white",
 		"backgroundColor": "#CCCCCC"
 	},

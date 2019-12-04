@@ -2,33 +2,33 @@
 	<view class="index-message animated flipInY fast">
 		<view class="message-list1 v-fjs">
 			<view class="v-fc">
-				<image :src="item.userPic" mode="widthFix"></image>
-				<view>{{item.userNick}}</view>
+				<image :src="itemTemp.userPic" mode="widthFix"></image>
+				<view>{{itemTemp.userNick}}</view>
 			</view>
-			<template v-if="!item.isGuanzhu">
-				<view class="v-fc">
+			<template v-if="!itemTemp.isGuanzhu">
+				<view class="v-fc" >
 					<view  @tap="guanzhu" class="index-follow">+关注</view>
 					<view @tap="quixiaoguanzhu" class="f35">×</view>
 				</view>
 			</template>
 		</view>
-		<view @tap="toDetail" class="message-list2">{{item.title}}</view>
+		<view @tap="toDetail" class="message-list2">{{itemTemp.title}}</view>
 		<view class="message-list3 v-fjc">
-			<image @tap="toDetail" :src="item.messageSrc" mode="widthFix"></image>
+			<image @tap="toDetail" :src="itemTemp.messageSrc" mode="widthFix"></image>
 			<!-- 中间的视屏播放按钮 -->
-			<template v-if="item.messageType == 'video'">
+			<template v-if="itemTemp.messageType == 'video'">
 				<view class="icon iconfont icon-bofang index-message-center-button"></view>
-				<view class="index-message-center-data">{{item.videoInfo.srcanNum}} 次播放 {{item.videoInfo.timeLong}}</view>
+				<view class="index-message-center-data">{{itemTemp.videoInfo.srcanNum}} 次播放 {{itemTemp.videoInfo.timeLong}}</view>
 			</template>
 		</view>
 		<view class="message-list4 v-fjs">
 			<view class="v-fc">
-				<view @tap="dingcai('ding')" class="icon iconfont icon-smile" :class="{active:(item.messageInfo.operaType == 1)}">{{item.messageInfo.dingNum}}</view>
-				<view @tap="dingcai('cai')" class="icon iconfont icon-kulian" :class="{active:(item.messageInfo.operaType == 2)}">{{item.messageInfo.caiNum}}</view>
+				<view @tap="dingcai('ding')" class="icon iconfont icon-smile" :class="{active:(messageInfo.operaType == 1)}">{{messageInfo.dingNum}}</view>
+				<view @tap="dingcai('cai')" class="icon iconfont icon-kulian" :class="{active:(messageInfo.operaType == 2)}">{{messageInfo.caiNum}}</view>
 			</view>
 			<view class="v-fc">
-				<view class="icon iconfont icon-pinglun1">{{item.commentNum}}</view>
-				<view class="icon iconfont icon-zhuanfa">{{item.shareNum}}</view>
+				<view class="icon iconfont icon-pinglun1">{{itemTemp.commentNum}}</view>
+				<view class="icon iconfont icon-zhuanfa">{{itemTemp.shareNum}}</view>
 			</view>
 		</view>
 	</view>
@@ -39,6 +39,12 @@
 		props: {
 			item: Object,
 			index: Number
+		},
+		data() {
+			return {
+				messageInfo:this.item.messageInfo,
+				itemTemp: this.item
+			}
 		},
 		methods: {
 			// 关注
@@ -98,7 +104,7 @@
 		margin-right: 20upx;
 	}
 
-	.message-list1>view>:last-child {
+	.message-list1>view:last-child {
 		color: #989898;
 	}
 
