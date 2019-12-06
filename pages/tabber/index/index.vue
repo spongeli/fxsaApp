@@ -1,8 +1,10 @@
 <template>
 	<view>
-		<!-- 导航组件 -->
-		<scroll-list :tabBars="tabBars" :tabSelectIndex="tabSelectIndex" @changScrollTab="changScrollTab"></scroll-list>
+		<!-- 导航栏 -->
+		<index-nav-bar></index-nav-bar>
 
+		<!-- 导航组件 -->
+		<index-scroll :tabBars="tabBars" :tabSelectIndex="tabSelectIndex" @changScrollTab="changScrollTab"></index-scroll>
 		<!-- swiper 面板 -->
 		<view class="uni-tab-bar">
 			<swiper class="swiper-box" :style="{height:windowHeight + 'px'}" :current="tabSelectIndex" @change="changSwiper">
@@ -29,22 +31,26 @@
 
 <script>
 	import indexList from "../../../components/index/index-list/index-list.vue";
-	import scrollList from "../../../components/index/index-scroll/index-scroll.vue";
+	import indexScroll from "../../../components/index/index-scroll/index-scroll.vue";
 	import loadMore from "../../../components/common/load-more.vue";
 	import noThing from "../../../components/common/no-thing.vue";
+	import uniNavBar from "../../../components/uni-nav-bar/uni-nav-bar.vue";
+	import indexNavBar from "../../../components/common/index-nav-bar.vue"
 	export default {
 		components: {
 			indexList,
-			scrollList,
+			indexScroll,
 			loadMore,
-			noThing
+			noThing,
+			uniNavBar,
+			indexNavBar
 		},
 		data() {
 			return {
 				windowHeight: 0,
 				tabSelectIndex: 0,
 				tabBarScorllSpan: [{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: [{
 							userPic: "../../../static/userpic/1.jpg",
 							userNick: "昵称",
@@ -102,7 +108,7 @@
 						}]
 					},
 					{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: [{
 							userPic: "../../../static/userpic/1.jpg",
 							userNick: "昵称",
@@ -142,7 +148,7 @@
 						}]
 					},
 					{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: [{
 							userPic: "../../../static/userpic/1.jpg",
 							userNick: "昵称",
@@ -200,54 +206,55 @@
 						}]
 					},
 					{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: []
 					},
 					{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: []
 					},
 					{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: []
 					},
 					{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: []
 					},
 					{
-						loadMore: "下拉加载更多",
+						loadMore: "正在加载更多",
 						list: []
 					}
 				],
 				tabBars: [{
-					name: '关注',
-					id: 'guanzhu'
-				}, 
-				{
-					name: '推荐',
-					id: 'tuijian'
-				}, 
-				{
-					name: '体育',
-					id: 'tiyu'
-				},
-				{
-					name: '热点',
-					id: 'redian'
-				}, {
-					name: '财经',
-					id: 'caijing'
-				}, {
-					name: '娱乐',
-					id: 'yule'
-				}, {
-					name: '军事',
-					id: 'junshi'
-				}, {
-					name: '历史',
-					id: 'lishi'
-				}]
+						name: '关注',
+						id: 'guanzhu'
+					},
+					{
+						name: '推荐',
+						id: 'tuijian'
+					},
+					{
+						name: '体育',
+						id: 'tiyu'
+					},
+					{
+						name: '热点',
+						id: 'redian'
+					}, {
+						name: '财经',
+						id: 'caijing'
+					}, {
+						name: '娱乐',
+						id: 'yule'
+					}, {
+						name: '军事',
+						id: 'junshi'
+					}, {
+						name: '历史',
+						id: 'lishi'
+					}
+				]
 			}
 		},
 		methods: {
@@ -258,7 +265,7 @@
 				this.tabSelectIndex = e.target.current;
 			},
 			scrollPull(index) {
-				if (this.tabBarScorllSpan[index].loadMore != '下拉加载更多') {
+				if (this.tabBarScorllSpan[index].loadMore != '正在加载更多') {
 					return;
 				}
 				this.tabBarScorllSpan[index].loadMore = '加载中';
@@ -286,9 +293,14 @@
 					}
 
 					this.tabBarScorllSpan[index].list.push(obj);
-					this.tabBarScorllSpan[index].loadMore = '下拉加载更多';
+					this.tabBarScorllSpan[index].loadMore = '正在加载更多';
 				}, 1000);
 				// this.tabBarScorllSpan[index].loadMore = '没有数据啦';
+			},
+			toPublish() {
+				uni.navigateTo({
+					url: "../../publish/publish"
+				})
 			}
 		},
 		onLoad() {
@@ -300,15 +312,15 @@
 			});
 		},
 		// 监听原生导航栏按钮事件
-		onNavigationBarButtonTap(e){
-			switch (e.index){
+		onNavigationBarButtonTap(e) {
+			switch (e.index) {
 				// 发布事件
 				case 1:
 					uni.navigateTo({
-						url:"../../publish/publish"
+						url: "../../publish/publish"
 					});
 					break;
-				// 签到
+					// 签到
 				case 0:
 					break;
 			}
@@ -316,12 +328,12 @@
 		// 监听原生导航栏click事件
 		onNavigationBarSearchInputClicked() {
 			uni.navigateTo({
-				url:"../../search/search"
+				url: "../../search/search"
 			})
 		}
 	}
 </script>
 
 <style>
-	@import url("index.css");
+	
 </style>

@@ -18,13 +18,23 @@
 			</view>
 			<!-- 右侧内容 -->
 			<view>{{dynamicInfos.title}}</view>
-			<view class="dynamic-right-media v-fjc">
-				<image :src="dynamicInfos.mediaSrc" mode="widthFix"></image>
-				<template v-if="dynamicInfos.mediaType == 'video'">
-					<view class="icon iconfont icon-bofang dynamic-right-media-center"></view>
-					<view class="dynamic-right-media-time">{{dynamicInfos.videoInfo.playNum}} 次播放 {{dynamicInfos.videoInfo.playTime}}</view>
-				</template>
-			</view>
+
+			<!-- 非转发，视频和图片的信息 -->
+			<template v-if="dynamicInfos.mediaType != 'share'">
+				<view class="dynamic-right-media v-fjc">
+					<image :src="dynamicInfos.mediaSrc" mode="widthFix"></image>
+					<template v-if="dynamicInfos.mediaType == 'video'">
+						<view class="icon iconfont icon-bofang dynamic-right-media-center"></view>
+						<view class="dynamic-right-media-time">{{dynamicInfos.videoInfo.playNum}} 次播放 {{dynamicInfos.videoInfo.playTime}}</view>
+					</template>
+				</view>
+			</template>
+			<template v-else>
+				<view class="dynamic-right-media-share v-fc">
+					<image :src="dynamicInfos.mediaSrc" mode="widthFix"></image>
+					<view>{{ZHshareText}}</view>
+				</view>
+			</template>
 			<view class="v-fjs dynamic-right-foot">
 				<view><span>{{dynamicInfos.addressProvince}}</span><span>{{dynamicInfos.addressCity}}</span></view>
 				<view class="v-fjs">
@@ -54,6 +64,15 @@
 					title: "关注成功"
 				})
 			},
+		},
+		computed: {
+			ZHshareText: function() {
+				if (this.dynamicInfos.mediaType == 'share') {
+					var text = this.dynamicInfos.shareInfo.text;
+					return text.length <= 33 ? text : (text.substring(0, 33) + "...");
+				}
+				return "";
+			}
 		}
 	}
 </script>
@@ -61,6 +80,7 @@
 <style>
 	/* 动态内容 start */
 	.dynamic-back {
+		margin-top: 20upx;
 		padding: 15upx 20upx 0 15upx;
 	}
 
@@ -103,6 +123,8 @@
 		border-radius: 20upx;
 		padding: 0 10upx;
 		margin-bottom: 10upx;
+		line-height: 30upx;
+		height: 30upx;
 	}
 
 	.dynamic-right-header-guanzhu {
@@ -153,8 +175,29 @@
 		font-size: 30upx;
 		line-height: 30upx;
 	}
+
 	.dynamic-right-foot>view:first-child>span:first-child {
 		margin-right: 20upx;
 	}
+
+	.dynamic-right-media-share {
+		width: 97%;
+		background-color: #F7F7F7;
+		padding: 10upx 10upx;
+		border-radius: 10upx;
+		height: 100upx;
+	}
+
+	.dynamic-right-media-share>image {
+		width: 200upx !important;
+		margin-right: 20upx;
+	}
+
+	.dynamic-right-media-share>view {
+		width: 100%;
+		font-size: 25upx;
+		text-overflow: ellipsis;
+	}
+
 	/* 动态内容 end */
 </style>

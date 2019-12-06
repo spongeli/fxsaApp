@@ -14,7 +14,6 @@
 .v-fjs {
 	justify-content: space-between;
 }
-
 .v-fjc {
 	justify-content: center;
 }
@@ -33,4 +32,7 @@
 
 .icon-nv {
 	background-color: #FF6A8D !important;
+}
+.body{
+	width: 100%;
 }

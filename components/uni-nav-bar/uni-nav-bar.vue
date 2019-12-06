@@ -168,7 +168,7 @@
 		display: flex;
 		/* #endif */
 		flex-wrap: nowrap;
-		width: 120rpx;
+		width: 60upx;
 		padding: 0 6px;
 		justify-content: center;
 		align-items: center;
@@ -178,7 +178,7 @@
 		/* #ifndef APP-NVUE */
 		display: flex;
 		/* #endif */
-		width: 150rpx;
+		width: 60upx;
 		justify-content: flex-start;
 	}
 
@@ -186,8 +186,7 @@
 		/* #ifndef APP-NVUE */
 		display: flex;
 		/* #endif */
-		width: 150rpx;
-		padding-right: 30rpx;
+		width: 60upx;
 		justify-content: flex-end;
 	}
 
