@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 导航栏 -->
-		<index-nav-bar></index-nav-bar>
+		<index-nav-bar @clickRightIcon="clickRightIcon" @clickLeftIcon="clickLeftIcon" @clickInput="clickInput"></index-nav-bar>
 
 		<!-- 导航组件 -->
 		<index-scroll :tabBars="tabBars" :tabSelectIndex="tabSelectIndex" @changScrollTab="changScrollTab"></index-scroll>
@@ -297,9 +297,18 @@
 				}, 1000);
 				// this.tabBarScorllSpan[index].loadMore = '没有数据啦';
 			},
-			toPublish() {
+			// 左侧
+			clickLeftIcon(){
+				
+			},
+			clickRightIcon(){
 				uni.navigateTo({
 					url: "../../publish/publish"
+				})
+			},
+			clickInput(){
+				uni.navigateTo({
+					url:"../../search/search"
 				})
 			}
 		},

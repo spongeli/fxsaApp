@@ -54,7 +54,8 @@
 		{
 			"path": "pages/tabber/chat/chat",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -121,6 +122,11 @@
 						}]
 					}
 				}
+			}
+		}, {
+			"path": "pages/follow/follow",
+			"style": {
+				"navigationStyle": "custom"
 			}
 		}
 	],
