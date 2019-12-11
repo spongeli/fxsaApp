@@ -5,27 +5,15 @@
 			<view>{{item.username}}</view>
 			<view class="icon iconfont" :class="{'icon-nan':item.sex == 1,'icon-nv':item.sex == 0}">{{item.age}}</view>
 		</view>
-		<view class="icon iconfont icon-zengjia1" :class="{}"></view>
+		<view class="icon iconfont" :class="{'icon-zengjia1':item.type == 2,'icon-xuanze-yixuan':item.type != 2}"></view>
 	</view>
 </template>
 
 <script>
 	export default {
 		props: {
-			followItem: Object
-		},
-		data() {
-			return {
-				itemObj: this.followItem,
-				item: {
-					userpic:"../../static/userpic/1.jpg",
-					username:"仰望天空的帅哥",
-					sex:0, //性别<>0=女&1=男
-					age:25,
-					type:1 //关注状态<>0=互相关注&1=关注&2=粉丝
-				}
-			}
-		},
+			item: Object
+		}
 	}
 </script>
 
@@ -52,11 +40,12 @@
 		flex-direction: column;
 		justify-content: space-between;
 	}
-	
-	.follow-center>view:first-child{
+
+	.follow-center>view:first-child {
 		font-size: 35upx;
 	}
-	.follow-center>view:last-child{
+
+	.follow-center>view:last-child {
 		width: 50upx;
 		text-align: center;
 		margin-top: 20upx;
@@ -65,5 +54,9 @@
 		background-color: #43B3FF;
 		padding: 0 5upx;
 		border-radius: 15upx;
+	}
+
+	.icon-xuanze-yixuan {
+		color: #CCCCCC !important;
 	}
 </style>

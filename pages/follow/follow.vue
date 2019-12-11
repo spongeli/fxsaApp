@@ -53,13 +53,37 @@
 				],
 				tabBarScorllSpan: [{
 					loadMore: "正在加载更多",
-					list: [{},{}]
+					list: [{
+						userpic: "../../static/userpic/1.jpg",
+						username: "仰望天空的帅哥",
+						sex: 0, //性别<>0=女&1=男
+						age: 25,
+						type: 0 //关注状态<>0=互相关注&1=关注&2=粉丝
+					}, {
+						userpic: "../../static/userpic/1.jpg",
+						username: "仰望天空的帅哥",
+						sex: 1, //性别<>0=女&1=男
+						age: 25,
+						type: 0 //关注状态<>0=互相关注&1=关注&2=粉丝
+					}]
 				}, {
 					loadMore: "正在加载更多",
-					list: [{}]
+					list: [{
+						userpic: "../../static/userpic/1.jpg",
+						username: "仰望天空的帅哥",
+						sex: 1, //性别<>0=女&1=男
+						age: 26,
+						type: 1 //关注状态<>0=互相关注&1=关注&2=粉丝
+					}]
 				}, {
 					loadMore: "正在加载更多",
-					list: [{}]
+					list: [{
+						userpic: "../../static/userpic/1.jpg",
+						username: "仰望天空的帅哥",
+						sex: 0, //性别<>0=女&1=男
+						age: 27,
+						type: 2 //关注状态<>0=互相关注&1=关注&2=粉丝
+					}]
 				}]
 			}
 		},
@@ -99,8 +123,8 @@
 		color: #343434;
 		border-bottom: 8upx solid #FEDE33;
 	}
-	
-	.dynamic-span{
+
+	.dynamic-span {
 		width: 686upx;
 		margin: 0 30upx;
 	}
