@@ -67,6 +67,7 @@
 		}, {
 			"path": "pages/search/search",
 			"style": {
+				"enablePullDownRefresh": true,
 				"app-plus": {
 					"scrollIndicator": "none",
 					"titleNView": {
@@ -125,6 +126,11 @@
 			}
 		}, {
 			"path": "pages/follow/follow",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/chat-detail/chat-detail",
 			"style": {
 				"navigationStyle": "custom"
 			}

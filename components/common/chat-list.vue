@@ -1,5 +1,5 @@
 <template>
-	<view class="char-list-span v-fjs">
+	<view class="char-list-span v-fjs" @tap="toChatDetail">
 		<image :src="item.userpic" mode="widthFix"></image>
 		<view>
 			<view class="char-list-span1 v-fjs">
@@ -34,6 +34,13 @@
 			ZHchatText: function() {
 				var charText = this.chatInfo.chatText;
 				return charText.length <= 15 ? charText : (charText.substring(0, 15) + "...");
+			}
+		},
+		methods:{
+			toChatDetail(){
+				uni.navigateTo({
+					url:"/pages/chat-detail/chat-detail"
+				})
 			}
 		}
 	}
