@@ -1,7 +1,7 @@
 <template>
 	<!-- 底部输入框 -->
 	<view class="chat-input-foot v-f">
-		<input type="text" value="" placeholder="文明发言" v-model="text"/>
+		<input type="text" value="" placeholder="文明发言" v-model="text" />
 		<view class="icon iconfont icon-fabu" @tap="submit"></view>
 	</view>
 </template>
@@ -13,17 +13,22 @@
 				text: ''
 			}
 		},
-		methods:{
-			submit(){
-				this.$emit("submit",this.text);
-				this.text = '';
+		methods: {
+			submit() {
+				if (this.text) {
+					this.$emit("submit", this.text);
+					this.text = '';
+				}
 			}
+		},
+		onNavigationBarSearchInputConfirmed() {
+			console.log(this.text);
 		}
 	}
 </script>
 
 <style>
-	.chat-input-foot{
+	.chat-input-foot {
 		position: fixed;
 		bottom: 0;
 		left: 0;
@@ -33,7 +38,8 @@
 		height: 90upx;
 		line-height: 90upx;
 	}
-	.chat-input-foot input{
+
+	.chat-input-foot input {
 		height: 60upx;
 		margin: auto 0;
 		margin-left: 20upx;
@@ -42,7 +48,8 @@
 		border-radius: 15upx;
 		padding: 0 20upx;
 	}
-	.chat-input-foot>view{
+
+	.chat-input-foot>view {
 		flex: 1;
 		text-align: center;
 		font-size: 40upx;

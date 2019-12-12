@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<view v-if="item.getTimeMsg" class="chat-time">{{item.getTimeMsg}}</view>
 		<view class="chat-news" :class="{'chat-news-me':item.isMe}">
 			<image :src="item.userpic" v-if="!item.isMe" mode="widthFix"></image>
 			<view class="chat-news-detail" :class="{'chat-news-detail-me':item.isMe}">
@@ -29,12 +30,13 @@
 
 	.chat-news>image {
 		width: 100upx;
+		height: 100upx;
 		border-radius: 50%;
 	}
 
 	.chat-news-detail {
 		margin-left: 20upx;
-		min-height: 60;
+		/* min-height: 60; */
 		line-height: 60upx;
 		font-size: 40upx;
 		max-width: 440upx;
@@ -44,8 +46,8 @@
 	}
 
 	.chat-news-detail>image {
-			max-width: 350upx;
-			max-height: 400upx;
+		max-width: 350upx;
+		max-height: 400upx;
 	}
 
 	.chat-news-me {
@@ -54,5 +56,13 @@
 
 	.chat-news-detail-me {
 		margin-right: 20upx;
+	}
+	
+	.chat-time{
+		padding: 20upx 0;
+		color: #A2A2A2;
+		margin: 0 auto;
+		margin-top: 30upx;
+		text-align: center;
 	}
 </style>
