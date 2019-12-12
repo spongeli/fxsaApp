@@ -90,7 +90,7 @@
 								"float": "right",
 								"fontSize": "16px",
 								"fontSrc": "/static/font/icon.ttf",
-								"text": "取消"
+								"text": "搜索"
 							}
 						]
 					}
@@ -134,12 +134,16 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
+		}, {
+			"path": "pages/user-info/user-info",
+			"style": {}
+		}, {
+			"path": "pages/dynamic-hots/dynamic-hots",
+			"style": {
+				"navigationBarTitleText": "话题分类"
+			}
 		}
-	    ,{
-            "path" : "pages/user-info/user-info",
-            "style" : {}
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		// "navigationBarTitleText": "仿糗事",

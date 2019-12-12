@@ -39,7 +39,7 @@
 						<view class="hots">
 							<view class="v-fjs">
 								<view>热门分类</view>
-								<view class="v-fjc">更多<view class="icon iconfont icon-jinru"></view>
+								<view class="v-fjc" @tap="toDynamicHots">更多<view class="icon iconfont icon-jinru"></view>
 								</view>
 							</view>
 							<view class="v-fjs">
@@ -195,6 +195,12 @@
 			}
 		},
 		methods: {
+			// 热门分类
+			toDynamicHots(){
+				uni.navigateTo({
+					url:"../../dynamic-hots/dynamic-hots"
+				})
+			},
 			// 切换话题
 			changtabIndex(index) {
 				this.tabBerIndex = index;
@@ -208,7 +214,6 @@
 					return;
 				}
 				this.dynamicItem.loadMore = '加载中';
-
 				// 模拟数据加载
 				setTimeout(() => {
 					var obj = {

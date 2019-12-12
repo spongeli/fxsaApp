@@ -33,9 +33,7 @@
 		// 监听取消按钮
 		onNavigationBarButtonTap(e) {
 			if (e.index == 0) {
-				uni.navigateBack({
-					delta: 1
-				});
+				this.getData();
 			}
 		},
 		// 监听搜索框输入事件
