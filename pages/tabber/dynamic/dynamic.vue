@@ -49,7 +49,12 @@
 							</view>
 						</view>
 						<!-- 最近更新 -->
-						<newest-update :newestList="newestList"></newest-update>
+						<view class="newest-update">
+							<view>最近更新</view>
+							<block v-for="(item,index) in newestList" :key="index">
+								<newest-update :item="item"></newest-update>
+							</block>
+						</view>
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -256,6 +261,21 @@
 </script>
 
 <style>
+	/* 最新更新 */
+	.newest-update {
+		width: 97%;
+		padding-left: 20upx;
+		margin-top: 20upx;
+	}
+	.newest-update>view:first-child {
+		font-size: 30upx;
+	}
+	
+	
+	
+	
+	
+	
 	/* 搜索框 */
 	.scroll-input {
 		border-top: 5upx solid #EEEEEE;
