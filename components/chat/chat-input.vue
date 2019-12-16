@@ -1,6 +1,6 @@
 <template>
 	<!-- 底部输入框 -->
-	<view class="chat-input-foot v-f">
+	<view class="chat-input-foot v-f" v-show="show">
 		<input type="text" value="" placeholder="文明发言" v-model="text" />
 		<view class="icon iconfont icon-fabu" @tap="submit"></view>
 	</view>
@@ -8,6 +8,12 @@
 
 <script>
 	export default {
+		props: {
+			show: {
+				type: Boolean,
+				default: true
+			}
+		},
 		data() {
 			return {
 				text: ''

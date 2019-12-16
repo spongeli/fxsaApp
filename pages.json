@@ -143,7 +143,13 @@
 				"navigationBarTitleText": "话题分类"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/dynamic-detail/dynamic-detail",
+            "style": {
+            	"navigationStyle": "custom"
+            }
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		// "navigationBarTitleText": "仿糗事",

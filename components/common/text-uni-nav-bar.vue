@@ -7,7 +7,7 @@
 				<view class="icon iconfont left-icon" :class="[leftIcon]" @tap="leftClick"></view>
 			</block>
 			<block>
-				<view class="nav-bar-center">{{centerText}}</view>
+				<view class="nav-bar-center">{{ZHcenterText}}</view>
 			</block>
 			<block slot="right">
 				<view class="right-icon">
@@ -41,6 +41,14 @@
 			},
 			rightClick(){
 				this.$emit("rightClick");
+			}
+		},
+		computed:{
+			ZHcenterText:function(){
+				if(this.centerText.length>10){
+					return this.centerText.substring(0,10) + '...';
+				}
+				return this.centerText;
 			}
 		}
 	}

@@ -1,4 +1,11 @@
 const gettime = {
+	getDateDifference(shorttime) {
+		shorttime = shorttime.toString().length < 13 ? shorttime * 1000 : shorttime;
+		var beginDate = new Date(shorttime);
+		var endDate = new Date();
+		var deffDate = this.getChatTime(endDate.getTime(),beginDate.getTime());
+		return deffDate ? deffDate : "刚刚";
+	},
 	// 计算当前日期星座
 	getHoroscope(date) {
 		let c = ['摩羯', '水瓶', '双鱼', '白羊', '金牛', '双子', '巨蟹', '狮子', '处女', '天秤', '天蝎', '射手', '摩羯']

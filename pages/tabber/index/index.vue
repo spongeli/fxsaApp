@@ -52,12 +52,13 @@
 				tabBarScorllSpan: [{
 						loadMore: "正在加载更多",
 						list: [{
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: false,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -70,12 +71,13 @@
 							commentNum: 303,
 							shareNum: 12
 						}, {
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: false,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -88,12 +90,13 @@
 							commentNum: 303,
 							shareNum: 12
 						}, {
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: true,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -110,12 +113,13 @@
 					{
 						loadMore: "正在加载更多",
 						list: [{
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: false,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -128,12 +132,13 @@
 							commentNum: 303,
 							shareNum: 12
 						}, {
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: true,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -150,12 +155,13 @@
 					{
 						loadMore: "正在加载更多",
 						list: [{
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: false,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -168,12 +174,13 @@
 							commentNum: 303,
 							shareNum: 12
 						}, {
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: true,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -186,12 +193,13 @@
 							commentNum: 303,
 							shareNum: 12
 						}, {
-							userPic: "../../../static/userpic/1.jpg",
+							messageId: 123,
+							userPic: "/static/userpic/1.jpg",
 							userNick: "昵称",
 							isGuanzhu: false,
 							title: "发表内容发表内容发表内容发表内容发表内容",
 							messageType: "img", // img:图片   video:视屏
-							messageSrc: "../../../static/datapic/11.jpg",
+							messageSrc: "/static/datapic/11.jpg",
 							videoInfo: {
 								srcanNum: "10w",
 								timeLong: "2:47"
@@ -273,12 +281,12 @@
 				// 模拟数据加载
 				setTimeout(() => {
 					var obj = {
-						userPic: "../../../static/userpic/1.jpg",
+						userPic: "/static/userpic/1.jpg",
 						userNick: "昵称",
 						isGuanzhu: false,
 						title: "发表内容发表内容发表内容发表内容发表内容",
 						messageType: "img", // img:图片   video:视屏
-						messageSrc: "../../../static/datapic/11.jpg",
+						messageSrc: "/static/datapic/11.jpg",
 						videoInfo: {
 							srcanNum: "10w",
 							timeLong: "2:47"
@@ -298,17 +306,17 @@
 				// this.tabBarScorllSpan[index].loadMore = '没有数据啦';
 			},
 			// 左侧
-			clickLeftIcon(){
-				
+			clickLeftIcon() {
+
 			},
-			clickRightIcon(){
+			clickRightIcon() {
 				uni.navigateTo({
 					url: "../../publish/publish"
 				})
 			},
-			clickInput(){
+			clickInput() {
 				uni.navigateTo({
-					url:"../../search/search"
+					url: "../../search/search"
 				})
 			}
 		},
@@ -344,5 +352,5 @@
 </script>
 
 <style>
-	
+
 </style>

@@ -6,8 +6,8 @@
 				<view>{{itemTemp.userNick}}</view>
 			</view>
 			<template v-if="!itemTemp.isGuanzhu">
-				<view class="v-fc" >
-					<view  @tap="guanzhu" class="index-follow">+关注</view>
+				<view class="v-fc">
+					<view @tap="guanzhu" class="index-follow">+关注</view>
 					<view @tap="quixiaoguanzhu" class="f35">×</view>
 				</view>
 			</template>
@@ -42,7 +42,7 @@
 		},
 		data() {
 			return {
-				messageInfo:this.item.messageInfo,
+				messageInfo: this.item.messageInfo,
 				itemTemp: this.item
 			}
 		},
@@ -80,11 +80,13 @@
 				}
 			},
 			// 跳转详情页
-			toDetail(){
-				console.log("跳转详情页！！");
+			toDetail() {
+				uni.navigateTo({
+					url: "/pages/dynamic-detail/dynamic-detail?messageId=" + this.item.messageId
+				})
 			},
 			// ×操作
-			quixiaoguanzhu(){
+			quixiaoguanzhu() {
 				this.item.isGuanzhu = true;
 			}
 		}
